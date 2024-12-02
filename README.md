@@ -7,7 +7,7 @@
 [![Together AI](https://img.shields.io/badge/Together_AI-CodeLlama-orange)](https://www.together.ai/)
 [![GitHub](https://img.shields.io/badge/GitHub-View_on_GitHub-blue?logo=GitHub)](https://github.com/cagBRT/code-generator-streamlit)
 
-*This project follows the tutorial by [Dr. Ernesto Lee](https://drlee.io/building-a-python-code-generator-with-codellama-in-streamlit-cloud-4a78886918eb)*
+*This project closely follows the tutorial by [Dr. Ernesto Lee](https://drlee.io/building-a-python-code-generator-with-codellama-in-streamlit-cloud-4a78886918eb)*
 
 ---
 
@@ -85,7 +85,7 @@ This project is created for educational purposes, implementing the architecture 
 
 ## 🙏 Acknowledgments
 
-- Dr. Ernesto Lee for the original tutorial and concept
+- Dr. Ernesto Lee is the author of the tutorial emulated here
 - Together AI for providing the CodeLlama model
 - Streamlit for the web framework
 - The open-source community for continuous inspiration
