@@ -1,37 +1,60 @@
+# Import necessary libraries
 import streamlit as st
-import requests
+import os
+from together import Together
 
-# Set up the app title and description
-st.title("Together AI-Powered Python Code Generator")
-st.write("Describe the Python code you'd like to generate, and this app will generate it for you using Together AI!")
+# Set the API key from secrets
+os.environ['TOGETHER_API_KEY'] = st.secrets["TOGETHER_API_KEY"]
 
-# Input area for the user to describe the desired Python code
-description = st.text_area("Enter a description of the Python code you'd like to generate:", "")
+# Initialize Together client
+client = Together()
+
+# Function to generate Python code using CodeLlama
+def generate_code_with_codellama(description):
+    """
+    Generate Python code based on a natural language description using CodeLlama.
+
+    Parameters:
+    description (str): A plain-text description of the desired Python code.
+
+    Returns:
+    str: Generated Python code or an error message.
+    """
+    try:
+        prompt = (
+            f"You are a Python programming assistant. Based on the following description, "
+            f"generate the Python code. Ensure the code is clear, well-commented, and includes necessary imports.\n\n"
+            f"Description: {description}\n\n"
+            f"Generated Python Code:"
+        )
+
+        # Call Together AI
+        response = client.chat.completions.create(
+            model="codellama/CodeLlama-34b-Instruct-hf",  # CodeLlama model
+            messages=[{"role": "user", "content": prompt}]
+        )
+
+        # Extract the generated code
+        generated_code = response.choices[0].message.content.strip()
+        return generated_code
+
+    except Exception as e:
+        return f"Error with CodeLlama: {e}"
+
+
+# Streamlit app layout
+st.title("Python Code Generator with CodeLlama")
+st.write("Enter a description of the Python application or code you need. CodeLlama will generate the corresponding Python code.")
+
+# Input box for the user to enter a description
+description = st.text_area("Application or Code Description", placeholder="Describe the application or code you want")
 
 # Button to trigger code generation
 if st.button("Generate Code"):
-    # Ensure the user has entered a description
-    if description.strip() == "":
-        st.error("Please enter a description before clicking 'Generate Code.'")
+    if description.strip():
+        st.write("### Generated Python Code")
+        # Generate code
+        generated_code = generate_code_with_codellama(description)
+        st.code(generated_code, language="python")
     else:
-        # Together AI API settings
-        api_url = "https://api.together.xyz/generate"
-        api_key = st.secrets["TOGETHER_API_KEY"]  # API key is securely stored in Streamlit Secrets
-        headers = {"Authorization": f"Bearer {api_key}"}
-        payload = {"description": description}
-
-        # Request to Together AI API
-        try:
-            response = requests.post(api_url, json=payload, headers=headers)
-            
-            # Handle the response
-            if response.status_code == 200:
-                generated_code = response.json().get("code", "No code was generated.")
-                st.success("Code successfully generated! See below:")
-                st.code(generated_code, language="python")
-            else:
-                st.error(f"Error {response.status_code}: Unable to generate code. Please try again.")
-        
-        # Handle connection or request errors
-        except requests.exceptions.RequestException as e:
-            st.error(f"An error occurred while connecting to the Together AI API: {e}")
+        st.error("Please provide a valid description.")
