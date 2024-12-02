@@ -94,6 +94,4 @@ This project is created for educational purposes, implementing the architecture 
 
 <div align="center">
 
-Project by ❤️ by Carlos C. Gomez, PhD | following [Original Tutorial](https://drlee.io/building-a-python-code-generator-with-codellama-in-streamlit-cloud-4a78886918eb)
-
 </div>
