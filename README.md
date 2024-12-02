@@ -6,12 +6,11 @@
 ![Python](https://img.shields.io/badge/python-v3.6+-blue.svg)
 [![Together AI](https://img.shields.io/badge/Together_AI-CodeLlama-orange)](https://www.together.ai/)
 [![GitHub](https://img.shields.io/badge/GitHub-View_on_GitHub-blue?logo=GitHub)](https://github.com/cagBRT/code-generator-streamlit)
+[![Medium](https://img.shields.io/badge/Medium-Read_Tutorial-green?logo=Medium)](https://drlee.io/building-a-python-code-generator-with-codellama-in-streamlit-cloud-4a78886918eb)
 
 *This project closely follows the tutorial by [Dr. Ernesto Lee](https://drlee.io/building-a-python-code-generator-with-codellama-in-streamlit-cloud-4a78886918eb)*
 
 ---
-
-<img src="https://raw.githubusercontent.com/tandpfun/skill-icons/main/icons/Python-Dark.svg" width="48" title="Python"> <img src="https://raw.githubusercontent.com/tandpfun/skill-icons/main/icons/Git.svg" width="48" title="Git">
 
 </div>
 
