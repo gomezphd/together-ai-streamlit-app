@@ -79,9 +79,9 @@ For detailed implementation steps and technical documentation, please refer to:
 - [Streamlit Documentation](https://docs.streamlit.io/)
 - [Together AI Documentation](https://docs.together.ai/)
 
-## 📜 License & Attribution
+## 📜 Attribution
 
-This project is created for educational purposes, implementing the architecture and concepts presented in [Dr. Ernesto Lee's tutorial](https://drlee.io/building-a-python-code-generator-with-codellama-in-streamlit-cloud-4a78886918eb). All rights reserved.
+This project is created for educational purposes, implementing the architecture and concepts presented in [Dr. Ernesto Lee's tutorial](https://drlee.io/building-a-python-code-generator-with-codellama-in-streamlit-cloud-4a78886918eb).
 
 ## 🙏 Acknowledgments
 
