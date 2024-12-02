@@ -1,136 +1,99 @@
-# Python Code Generator with CodeLlama
-
-[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://streamlit.io/cloud)
-
-A Streamlit-based web application that generates Python code from natural language descriptions using CodeLlama through Together AI.
+# 🚀 Python Code Generator with CodeLlama
 
 <div align="center">
 
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://streamlit.io/cloud)
 ![Python](https://img.shields.io/badge/python-v3.6+-blue.svg)
-[![GitHub](https://img.shields.io/badge/GitHub-View_on_GitHub-blue?logo=GitHub)](https://github.com/YOUR_USERNAME/code-generator-streamlit)
-[![Streamlit](https://img.shields.io/badge/Streamlit-View_App-red?logo=Streamlit)](https://YOUR_APP_URL.streamlit.app)
+[![Together AI](https://img.shields.io/badge/Together_AI-CodeLlama-orange)](https://www.together.ai/)
+[![GitHub](https://img.shields.io/badge/GitHub-View_on_GitHub-blue?logo=GitHub)](https://github.com/cagBRT/code-generator-streamlit)
+
+*This project follows the tutorial by [Dr. Ernesto Lee](https://drlee.io/building-a-python-code-generator-with-codellama-in-streamlit-cloud-4a78886918eb)*
+
+---
+
+<img src="https://raw.githubusercontent.com/tandpfun/skill-icons/main/icons/Python-Dark.svg" width="48" title="Python"> <img src="https://raw.githubusercontent.com/tandpfun/skill-icons/main/icons/AWS-Dark.svg" width="48" title="Cloud"> <img src="https://raw.githubusercontent.com/tandpfun/skill-icons/main/icons/Git.svg" width="48" title="Git">
 
 </div>
 
-## 🚀 Overview
+## 📖 Overview
 
-This application demonstrates the integration of Large Language Models (specifically CodeLlama) with a web interface to generate Python code based on user descriptions. Built with Streamlit and Together AI, it provides an intuitive interface for converting natural language requirements into functional Python code.
+A Streamlit web application that transforms natural language descriptions into Python code using CodeLlama's AI capabilities. Built with Streamlit Cloud and Together AI, this project makes code generation accessible through an intuitive interface.
 
-## ✨ Features
+### ✨ Key Features
 
-- 🤖 Natural Language to Code conversion using CodeLlama
-- 🌐 Clean, user-friendly web interface built with Streamlit
-- 🔒 Secure API key management
-- ☁️ Cloud deployment ready
-- 📝 Well-documented code generation
-- 🛠️ Error handling and input validation
+- 🤖 AI-Powered Code Generation
+- 🌐 User-Friendly Web Interface
+- 🔒 Secure API Management
+- ☁️ Cloud-Based Architecture
+- 📝 Detailed Documentation Support
 
-## 🛠️ Installation
+## 🎯 Quick Demo
 
-1. Clone the repository
-```bash
-git clone https://github.com/YOUR_USERNAME/code-generator-streamlit
-cd code-generator-streamlit
-```
+![Code Generator Demo](https://raw.githubusercontent.com/cagBRT/code-generator-streamlit/main/demo.gif)
 
-2. Install dependencies
-```bash
-pip install -r requirements.txt
-```
+### Example Usage:
 
-3. Create `requirements.txt`
-```plaintext
-streamlit
-together
-```
-
-## 🔑 Configuration
-
-1. Create `.streamlit/secrets.toml`:
-```toml
-TOGETHER_API_KEY = "your_together_api_key_here"
-```
-
-2. Run locally:
-```bash
-streamlit run app.py
-```
-
-## ☁️ Deployment
-
-1. Push to GitHub:
-```bash
-git add .
-git commit -m "Initial commit"
-git push origin main
-```
-
-2. Deploy on Streamlit Cloud:
-- Visit [Streamlit Cloud](https://streamlit.io/cloud)
-- Connect your GitHub repository
-- Set main file path: `app.py`
-- Configure your Together AI API key in Streamlit Cloud secrets
-
-## 💻 Usage
-
-Here's a quick example of how to use the code generator:
-
-### Input:
-```plaintext
-Create a function to reverse a string in Python
-```
-
-### Output:
 ```python
-def reverse_string(text):
+Input: "Create a function to calculate the fibonacci sequence"
+
+Output: 
+def fibonacci(n):
     """
-    Reverse a given string.
-    
-    Parameters:
-    text (str): The string to be reversed
-    
-    Returns:
-    str: The reversed string
+    Generates the Fibonacci sequence up to the nth term.
+
+    :param n: The number of terms to generate
+    :return: A list of the Fibonacci sequence up to the nth term
     """
-    return text[::-1]
+    if n == 0:
+        return []
+    elif n == 1:
+        return [0]
+    else:
+        sequence = [0, 1]
+        for i in range(2, n):
+            sequence.append(sequence[i-1] + sequence[i-2])
+        return sequence
 
 # Example usage
-text = "Hello, World!"
-reversed_text = reverse_string(text)
-print(reversed_text)  # Output: "!dlroW ,olleH"
+fibonacci(5)  # returns [0, 1, 1, 2, 3]
 ```
 
-## 📁 Project Structure
+## 🛠️ Setup & Deployment
 
-```
-code-generator-streamlit/
-├── app.py                 # Main Streamlit application
-├── requirements.txt       # Project dependencies
-├── .streamlit/           # Streamlit configuration
-│   └── secrets.toml      # API keys and secrets
-└── README.md             # Project documentation
-```
+1. **Clone & Install**
+   ```bash
+   git clone https://github.com/cagBRT/code-generator-streamlit
+   cd code-generator-streamlit
+   pip install -r requirements.txt
+   ```
 
-## 🤝 Contributing
+2. **Deploy & Configure**
+   - Deploy via Streamlit Cloud
+   - Configure Together AI API key
+   - Full deployment instructions in the [original tutorial](https://drlee.io/building-a-python-code-generator-with-codellama-in-streamlit-cloud-4a78886918eb)
 
-1. Fork the repository
-2. Create a new branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+## 📚 Documentation
 
-## 📝 License
+For detailed implementation steps and technical documentation, please refer to:
+- [Original Tutorial by Dr. Ernesto Lee](https://drlee.io/building-a-python-code-generator-with-codellama-in-streamlit-cloud-4a78886918eb)
+- [Streamlit Documentation](https://docs.streamlit.io/)
+- [Together AI Documentation](https://docs.together.ai/)
 
-This project is created for educational purposes. All rights reserved.
+## 📜 License & Attribution
+
+This project is created for educational purposes, implementing the architecture and concepts presented in [Dr. Ernesto Lee's tutorial](https://drlee.io/building-a-python-code-generator-with-codellama-in-streamlit-cloud-4a78886918eb). All rights reserved.
 
 ## 🙏 Acknowledgments
 
-- Based on tutorial by Dr. Ernesto Lee
+- Dr. Ernesto Lee for the original tutorial and concept
 - Together AI for providing the CodeLlama model
 - Streamlit for the web framework
+- The open-source community for continuous inspiration
 
 ---
 
 <div align="center">
-Created with ❤️ by [YOUR_NAME]
+
+Project by ❤️ by Carlos C. Gomez, PhD | following [Original Tutorial](https://drlee.io/building-a-python-code-generator-with-codellama-in-streamlit-cloud-4a78886918eb)
+
 </div>
